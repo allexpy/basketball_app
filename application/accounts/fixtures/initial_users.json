@@ -1,0 +1,40 @@
+[
+    {
+        "model": "accounts.customuser",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$HMvCc6K8haelHvYOIj7Nql$e9JnGYObtM5eKXPwHy55hpOgGH4FxT0muAiUNOkDbko=",
+            "last_login": "2023-02-16T14:14:40.983Z",
+            "is_superuser": false,
+            "email": "admin@example.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-02-16T14:14:40.983Z",
+            "first_name": null,
+            "last_name": null,
+            "type": 0,
+            "groups": [],
+            "user_permissions": [],
+            "countries": []
+        }
+    },
+    {
+        "model": "accounts.customuser",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$Emzk94uWiZpDlITi3NJaHL$YtuPsF5cdDMD+Cz+Ftu3rNmIQSF/t/f+rdjrUq7B7aw=",
+            "last_login": null,
+            "is_superuser": false,
+            "email": "user@example.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-02-16T14:19:21.540Z",
+            "first_name": "John",
+            "last_name": "Doe",
+            "type": 1,
+            "groups": [],
+            "user_permissions": [],
+            "countries": []
+        }
+    }
+]

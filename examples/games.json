@@ -1,0 +1,70 @@
+{
+    "get": "games",
+    "parameters": {
+        "league": "178",
+        "season": "2022",
+        "date": "2022-07-09",
+        "team": "2925"
+    },
+    "errors": [],
+    "results": 1,
+    "response": [
+        {
+            "id": 186156,
+            "date": "2022-07-09T00:00:00+00:00",
+            "time": "00:00",
+            "timestamp": 1657324800,
+            "timezone": "UTC",
+            "stage": null,
+            "week": "4",
+            "status": {
+                "long": "Game Finished",
+                "short": "FT",
+                "timer": null
+            },
+            "league": {
+                "id": 1,
+                "name": "BIG3",
+                "type": "cup",
+                "season": 2022,
+                "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/leagues\\/178.png"
+            },
+            "country": {
+                "id": 1,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/us.svg"
+            },
+            "teams": {
+                "home": {
+                    "id": 1,
+                    "name": "Triplets",
+                    "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/2925.png"
+                },
+                "away": {
+                    "id": 2,
+                    "name": "Bivouac",
+                    "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2918.png"
+                }
+            },
+            "scores": {
+                "home": {
+                    "quarter_1": 0,
+                    "quarter_2": 25,
+                    "quarter_3": 0,
+                    "quarter_4": 21,
+                    "over_time": null,
+                    "total": 46
+                },
+                "away": {
+                    "quarter_1": 0,
+                    "quarter_2": 23,
+                    "quarter_3": 0,
+                    "quarter_4": 27,
+                    "over_time": null,
+                    "total": 50
+                }
+            }
+        }
+    ]
+}

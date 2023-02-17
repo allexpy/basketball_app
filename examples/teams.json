@@ -1,0 +1,119 @@
+{
+    "get": "teams",
+    "parameters": {
+        "league": "1",
+        "season": "2019-2020"
+    },
+    "errors": [],
+    "results": 9,
+    "response": [
+        {
+            "id": 8,
+            "name": "Adelaide",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/8.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 7,
+            "name": "Brisbane Bullets",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/7.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Cairns",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/3.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 6,
+            "name": "Illawarra Hawks",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/6.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 1,
+            "name": "Melbourne United",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/1.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 9,
+            "name": "New Zealand Breakers",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/9.png",
+            "nationnal": true,
+            "country": {
+                "id": 31,
+                "name": "New-Zealand",
+                "code": "NZ",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/nz.svg"
+            }
+        },
+        {
+            "id": 5,
+            "name": "Perth",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/5.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 2,
+            "name": "South East Melbourne",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/au.svg"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Sydney",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/4.png",
+            "nationnal": false,
+            "country": {
+                "id": 1,
+                "name": "Australia",
+                "code": "AU",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+            }
+        }
+    ]
+}
