@@ -6,6 +6,7 @@ import requests
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from rest_framework import status
+from rest_framework.exceptions import ErrorDetail
 from rest_framework.reverse import reverse
 
 # Local
@@ -638,5 +639,134 @@ def test_import_games(
     data["league"] = 178
     response = client.post(url, data, format="json")
 
+    assert response.status_code == status.HTTP_201_CREATED
     assert response.data["success"] is True
     assert Game.objects.count() == 1
+
+
+def mock_get_no_results(*args, **kwargs):
+    return MockedResponse(status.HTTP_200_OK, '{"results": []}')
+
+
+@pytest.mark.django_db
+def test_import_games_api_no_results_bad_request(
+    monkeypatch, create_user, create_authenticated_client
+):
+    url = reverse("games:import-games")
+    admin_user = create_user(
+        user_type=get_user_model().UserTypes.ADMIN, email="admin@example.com"
+    )
+    client = create_authenticated_client(admin_user)
+    monkeypatch.setattr(requests, "get", mock_get_no_results)
+
+    data = dict()
+    data["season"] = 2022
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+
+    assert response.status_code == status.HTTP_204_NO_CONTENT
+    assert response.data["success"] is False
+    assert Game.objects.count() == 0
+
+
+def mock_get_with_bad_request(*args, **kwargs):
+    return MockedResponse(status.HTTP_400_BAD_REQUEST, '{"errors": "Errors message"}')
+
+
+@pytest.mark.django_db
+def test_import_games_api_bad_request(
+    monkeypatch, create_user, create_authenticated_client
+):
+    url = reverse("games:import-games")
+    admin_user = create_user(
+        user_type=get_user_model().UserTypes.ADMIN, email="admin@example.com"
+    )
+    client = create_authenticated_client(admin_user)
+    monkeypatch.setattr(requests, "get", mock_get_with_bad_request)
+
+    data = dict()
+    data["season"] = 2022
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert response.data["success"] is False
+    assert Game.objects.count() == 0
+
+
+def mock_get_service_unavailable(*args, **kwargs):
+    return MockedResponse(status.HTTP_500_INTERNAL_SERVER_ERROR, '{"errors": "Errors message"}')
+
+
+@pytest.mark.django_db
+def test_import_games_api_service_unavailable(
+    monkeypatch, create_user, create_authenticated_client
+):
+    url = reverse("games:import-games")
+    admin_user = create_user(
+        user_type=get_user_model().UserTypes.ADMIN, email="admin@example.com"
+    )
+    client = create_authenticated_client(admin_user)
+    monkeypatch.setattr(requests, "get", mock_get_service_unavailable)
+
+    data = dict()
+    data["season"] = 2022
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+
+    assert response.status_code == status.HTTP_503_SERVICE_UNAVAILABLE
+    assert response.data["success"] is False
+    assert Game.objects.count() == 0
+
+
+@pytest.mark.django_db
+def test_import_games_bad_season_data(
+    create_user, create_authenticated_client
+):
+    url = reverse("games:import-games")
+    admin_user = create_user(
+        user_type=get_user_model().UserTypes.ADMIN, email="admin@example.com"
+    )
+    client = create_authenticated_client(admin_user)
+
+    data = dict()
+    data["season"] = 1949
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail
+
+    data = dict()
+    data["season"] = 2050
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail
+
+    data = dict()
+    data["season"] = "1940-2020"
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail
+
+    data = dict()
+    data["season"] = "2000-2070"
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail
+
+    data = dict()
+    data["season"] = "gsdfgsfdgfdg"
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail
+
+    data = dict()
+    data["season"] = "gsdfg-sfdgfdg"
+    data["league"] = 178
+    response = client.post(url, data, format="json")
+    assert response.status_code == status.HTTP_400_BAD_REQUEST
+    assert type(response.data['season'][0]) == ErrorDetail

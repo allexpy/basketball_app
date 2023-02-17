@@ -1,5 +1,10 @@
 # Third-party
+import json
+import os
+
+# Third-party
 import pytest
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from rest_framework.reverse import reverse
 from rest_framework.test import APIClient
@@ -50,3 +55,14 @@ def create_country():
         return country
 
     return _create_country
+
+
+@pytest.fixture(scope="function")
+def create_data_for_import():
+    def _create_data_for_import(filename):
+        with open(os.path.join(settings.ROOT_DIR, f"examples/{filename}.json")) as file:
+            data = file.read()
+            data = json.loads(data)
+        return data
+
+    return _create_data_for_import

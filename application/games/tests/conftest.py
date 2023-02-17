@@ -1,11 +1,8 @@
 # Built-in
 import datetime
-import json
-import os
 
 # Third-party
 import pytest
-from django.conf import settings
 from django.utils.timezone import get_current_timezone, make_aware
 
 # Local
@@ -100,14 +97,3 @@ def create_game(create_team):
         return game
 
     return _create_game
-
-
-@pytest.fixture(scope="function")
-def create_data_for_import():
-    def _create_data_for_import():
-        with open(os.path.join(settings.ROOT_DIR, "examples/games.json")) as file:
-            data = file.read()
-            data = json.loads(data)
-        return data
-
-    return _create_data_for_import

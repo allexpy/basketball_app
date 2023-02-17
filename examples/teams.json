@@ -1,118 +1,154 @@
 {
     "get": "teams",
     "parameters": {
-        "league": "1",
-        "season": "2019-2020"
+        "league": "178",
+        "season": "2022"
     },
     "errors": [],
-    "results": 9,
+    "results": 12,
     "response": [
         {
-            "id": 8,
-            "name": "Adelaide",
-            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/8.png",
+            "id": 3084,
+            "name": "3 Headed Monsters 3x3",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/3084.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 7,
-            "name": "Brisbane Bullets",
-            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/7.png",
+            "id": 2915,
+            "name": "3's Company",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/2915.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 3,
-            "name": "Cairns",
-            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/3.png",
+            "id": 2916,
+            "name": "Aliens",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2916.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 6,
-            "name": "Illawarra Hawks",
-            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/6.png",
+            "id": 2917,
+            "name": "Ball Hogs",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/2917.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 1,
-            "name": "Melbourne United",
-            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/1.png",
+            "id": 2918,
+            "name": "Bivouac",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/2918.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 9,
-            "name": "New Zealand Breakers",
-            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/9.png",
-            "nationnal": true,
+            "id": 2919,
+            "name": "Enemies",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2919.png",
+            "nationnal": false,
             "country": {
-                "id": 31,
-                "name": "New-Zealand",
-                "code": "NZ",
-                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/nz.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 5,
-            "name": "Perth",
-            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/5.png",
+            "id": 2920,
+            "name": "Ghost Ballers",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2920.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 2,
-            "name": "South East Melbourne",
-            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2.png",
+            "id": 2921,
+            "name": "Killer 3's",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2921.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
             }
         },
         {
-            "id": 4,
-            "name": "Sydney",
-            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/4.png",
+            "id": 2922,
+            "name": "Power",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2922.png",
             "nationnal": false,
             "country": {
-                "id": 1,
-                "name": "Australia",
-                "code": "AU",
-                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/au.svg"
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
+            }
+        },
+        {
+            "id": 2923,
+            "name": "Tri-State",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2923.png",
+            "nationnal": false,
+            "country": {
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
+            }
+        },
+        {
+            "id": 2924,
+            "name": "Trilogy",
+            "logo": "https:\\/\\/media-3.api-sports.io\\/basketball\\/teams\\/2924.png",
+            "nationnal": false,
+            "country": {
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media.api-sports.io\\/flags\\/us.svg"
+            }
+        },
+        {
+            "id": 2925,
+            "name": "Triplets",
+            "logo": "https:\\/\\/media.api-sports.io\\/basketball\\/teams\\/2925.png",
+            "nationnal": false,
+            "country": {
+                "id": 5,
+                "name": "USA",
+                "code": "US",
+                "flag": "https:\\/\\/media-3.api-sports.io\\/flags\\/us.svg"
             }
         }
     ]

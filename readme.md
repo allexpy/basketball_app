@@ -11,7 +11,7 @@ can create an admin user by calling `./manage.py create_admin` and register a no
 
 7. To import necessary data for tests:
 - `./manage.py import_countries`
-- `./manage.py import_season`
+- `./manage.py import_seasons`
 - `./manage.py import_leagues`
 - `./manage.py import_teams`
 

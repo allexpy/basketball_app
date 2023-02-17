@@ -108,15 +108,6 @@ class UserUnassignedGameViewSet(
     )
     def assign_game(self, request, pk):
         instance = self.get_object()
-        if instance.country not in request.user.countries.all():
-            return Response(
-                {
-                    "success": False,
-                    "message": "You cannot assign a game from a country which you don't have permission to.",
-                },
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-
         instance.user = request.user
         instance.save(update_fields=["user"])
         return Response({"success": True}, status=status.HTTP_200_OK)
@@ -141,12 +132,12 @@ class ImportGameAPIView(APIView):
         if response.status_code == 200:
             data = json.loads(response.text)
             if not data["results"]:
-                return Response({"success": False, "message": "No results matched."})
+                return Response({"success": False, "message": "No results matched."}, status=status.HTTP_204_NO_CONTENT)
             import_games(data=data["response"])
 
         elif response.status_code == 400:
             data = json.loads(response.text)
-            return Response({"success": False, "message": data["errors"]})
+            return Response({"success": False, "message": data["errors"]}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({"success": False, "message": "Service unavailable."})
+            return Response({"success": False, "message": "Service unavailable."}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
         return Response({"success": True}, status=status.HTTP_201_CREATED)
