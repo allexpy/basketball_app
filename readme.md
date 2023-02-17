@@ -1,6 +1,6 @@
 # Steps to run and test the application
 
-1. Create `.env.dev` file at the ROOT of the project containing RAPID_API_KEY. E.g. RAPID_API_KEY = 3f39211bb7msh51911b64057a0cdp1bfa3djsn17aa2a401432
+1. Create `.env.dev` file at the ROOT of the project containing `RAPID_API_KEY`. E.g. `RAPID_API_KEY = 7456764754747hgkjhkghkdhgdfhf` and django `SECRET_KEY` E.g. `SECRET_KEY = 48gy85bn4589`
 1. Create a virtualenv using poetry and install dependencies: `poetry install`
 2. Activate the virtualenv. To find the path of the poetry virtualenv use `poetry env info`. Lastly use `source venv/bin/path-to-virtualenv-python`.
 3. `./manage.py makemigrations`
