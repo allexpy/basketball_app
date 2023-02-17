@@ -132,12 +132,21 @@ class ImportGameAPIView(APIView):
         if response.status_code == 200:
             data = json.loads(response.text)
             if not data["results"]:
-                return Response({"success": False, "message": "No results matched."}, status=status.HTTP_204_NO_CONTENT)
+                return Response(
+                    {"success": False, "message": "No results matched."},
+                    status=status.HTTP_204_NO_CONTENT,
+                )
             import_games(data=data["response"])
 
         elif response.status_code == 400:
             data = json.loads(response.text)
-            return Response({"success": False, "message": data["errors"]}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"success": False, "message": data["errors"]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         else:
-            return Response({"success": False, "message": "Service unavailable."}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            return Response(
+                {"success": False, "message": "Service unavailable."},
+                status=status.HTTP_503_SERVICE_UNAVAILABLE,
+            )
         return Response({"success": True}, status=status.HTTP_201_CREATED)

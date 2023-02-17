@@ -27,7 +27,7 @@ class Command(BaseCommand):
             if not data["results"]:
                 self.stdout.write("No results found.")
 
-            import_leagues(data=data['response'])
+            import_leagues(data=data["response"])
             self.stdout.write("Done.")
 
         elif response.status_code == 400:

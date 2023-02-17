@@ -8,7 +8,6 @@ import requests
 from django.core.management.base import BaseCommand
 
 # local
-from games.models import Season
 from games.services import import_seasons
 
 

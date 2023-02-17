@@ -26,7 +26,7 @@ class Command(BaseCommand):
             data = json.loads(response.text)
             if not data["results"]:
                 self.stdout.write("No results found.")
-            import_countries(data=data['response'])
+            import_countries(data=data["response"])
             self.stdout.write("Done.")
 
         elif response.status_code == 400:

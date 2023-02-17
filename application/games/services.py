@@ -71,13 +71,15 @@ def import_leagues(data: list):
                 year = int(year.split("-")[0])
 
             if not db_leagues.filter(
-                    reference_id=league_data["id"],
-                    season__year=year,
-                    country__reference_id=league_data["country"]["id"],
+                reference_id=league_data["id"],
+                season__year=year,
+                country__reference_id=league_data["country"]["id"],
             ).exists():
                 leagues.append(
                     League(
-                        country=db_countries.filter(reference_id=league_data["country"]["id"]).first(),
+                        country=db_countries.filter(
+                            reference_id=league_data["country"]["id"]
+                        ).first(),
                         season=db_seasons.filter(year=year).first(),
                         reference_id=league_data["id"],
                         name=league_data["name"],
@@ -85,7 +87,12 @@ def import_leagues(data: list):
                     )
                 )
                 idx += 1
-                print(f"{idx}. "f'{league_data["name"]} - 'f'{season_data["season"]} - 'f'{league_data["country"]["id"]} added')
+                print(
+                    f"{idx}. "
+                    f'{league_data["name"]} - '
+                    f'{season_data["season"]} - '
+                    f'{league_data["country"]["id"]} added'
+                )
     League.objects.bulk_create(leagues)
     return True
 
@@ -100,9 +107,9 @@ def import_teams(data: list, season: int, league: 178):
 
     for idx, team_data in enumerate(data, start=1):
         if not db_teams.filter(
-                reference_id=team_data["id"],
-                season__year=season,
-                league__reference_id=league,
+            reference_id=team_data["id"],
+            season__year=season,
+            league__reference_id=league,
         ).exists():
             teams.append(
                 Team(
