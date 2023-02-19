@@ -109,6 +109,20 @@ python-versions = "*"
 jinja2 = "*"
 
 [[package]]
+name = "coverage"
+version = "7.1.0"
+description = "Code coverage measurement for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.11.0a6\" and extra == \"toml\""}
+
+[package.extras]
+toml = ["tomli"]
+
+[[package]]
 name = "django"
 version = "4.1.6"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -405,6 +419,21 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "pytest-cov"
+version = "4.0.0"
+description = "Pytest plugin for measuring coverage."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+coverage = {version = ">=5.2.1", extras = ["toml"]}
+pytest = ">=4.6"
+
+[package.extras]
+testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
+
+[[package]]
 name = "pytest-django"
 version = "4.5.2"
 description = "A Django plugin for pytest."
@@ -535,7 +564,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "36b7a8fe396dc25f074d076ee737d1a5e5540bf4257b0cff34d40c906b5d0945"
+content-hash = "fd19fdbba28af819bc648a65275e306dcf50e3ec76cd1692c04a7b0ddd2cfadb"
 
 [metadata.files]
 asgiref = []
@@ -547,6 +576,7 @@ click = []
 colorama = []
 coreapi = []
 coreschema = []
+coverage = []
 django = []
 django-custom-user = []
 django-rest-framework = []
@@ -572,6 +602,7 @@ pycodestyle = []
 pyflakes = []
 pyjwt = []
 pytest = []
+pytest-cov = []
 pytest-django = []
 python-dotenv = []
 pytz = []
