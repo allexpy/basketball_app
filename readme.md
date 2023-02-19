@@ -309,8 +309,12 @@ You can manually test endpoints in postman or access the openapi endpoint http:/
 
 # Running tests
 
-At the root of the project call `pytest`.
+At the root of the project execute `pytest`.
+
+# Code coverage
+
+To verify code coverage execute at the root of the project `pytest --cov-config=.coveragerc --cov=application application/`
 
 # Code quality checking
 
-At the root of the project call `isort . --profile black`, `black .` and `flake8 .`
+At the root of the project execute `isort . --profile black`, `black .` and `flake8 .`
