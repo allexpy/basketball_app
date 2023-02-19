@@ -18,5 +18,5 @@ class CustomUser(AbstractEmailUser):
         choices=UserTypes.choices, default=UserTypes.NORMAL
     )
 
-    def __repr__(self):
+    def __str__(self):
         return self.email

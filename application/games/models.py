@@ -10,7 +10,7 @@ class Season(models.Model):
     year = models.PositiveSmallIntegerField(unique=True)
     period = models.CharField(max_length=50, blank=True, null=True, default=None)
 
-    def __repr__(self):
+    def __str__(self):
         return str(self.year)
 
 
@@ -21,7 +21,7 @@ class League(models.Model):
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=100)
 
-    def __repr__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -35,7 +35,7 @@ class Team(models.Model):
     reference_id = models.PositiveSmallIntegerField(unique=True)
     name = models.CharField(max_length=200)
 
-    def __repr__(self):
+    def __str__(self):
         return self.name
 
 
@@ -62,5 +62,5 @@ class Game(models.Model):
     status = models.CharField(max_length=100)
     scores = models.JSONField(blank=True)
 
-    def __repr__(self):
+    def __str__(self):
         return str(self.reference_id)

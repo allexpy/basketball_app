@@ -7,7 +7,7 @@ class Country(models.Model):
     code = models.CharField(max_length=2, blank=True, null=True, default=None)
     name = models.CharField(max_length=200)
 
-    def __repr__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
